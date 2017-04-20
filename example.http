@@ -1,0 +1,28 @@
+POST http://localhost:3000/api/users HTTP/1.1
+content-type: application/json
+
+{
+    "username": "harsha",
+    "password" : "harsha",
+    "firstName" : "Harsha",
+    "lastName" : "M"
+}
+
+###
+
+GET http://localhost:3000/api/users/ HTTP/1.1
+
+###
+
+POST http://localhost:3000/api/authenticate/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "harsha",
+    "password" : "harsha"
+}
+
+###
+
+DELETE http://localhost:3000/api/users/584d8da42c0d463e74203710 HTTP/1.1 
+
