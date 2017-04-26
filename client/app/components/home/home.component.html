@@ -1,13 +1,58 @@
 ﻿
-<div id="pageContainer" style=" height: 610px; width: 1280px; margin: 0 auto 5px auto;">
-    <video id="localVideo" autoplay muted style="width:40%;"></video>
-        <video id="remoteVideo" autoplay style="width:40%;"></video>
-       <!-- <input type="button" id="start"  value="Start Video">//-->
+<div *ngIf="!showPhoneIcon" id="pageContainer">
+  <div id="chatbox" class="chat_box">
+      <div class="chat_head">Chatbox
+          <span><div [hidden]="hideElement" class="close" (click)="closeChatDiv()">x</div></span>
+          <span><div class="minus">-</div></span>
+          <a (click)="remoteVideo(true)">click</a>
+      </div>
+
+      <div id="chatbody" class="chat_body">
+          <span>
+            <div class="three">
+              <div class="icon" id="blinkMe"></div>
+              <div class="icons" id="sblinkMe"></div>
+            </div>
+          </span>
+          <span>
+            <div class="one">
+              <div class="video_head">video chat
+                <div class="closev">x</div>
+                <span><div class="minusv">-</div></span>
+                <span><div class="plusv">+</div></span>
+              </div>
+              <video id="localVideo"  autoplay muted style=" width:40%" ></video>
+              <video id="remoteVideo" style=" width:40%" autoplay ></video>
+              <!-- <input type="button" id="start"  value="Start Video">//-->
+            </div>
+          </span>
+          <span>
+            <div id="second" class="two"> 
+              <div id="mbox" class="msg_box">
+                <div class="msg_head">text chat<div class="closes">x</div>
+                  <span><div class="minusm">-</div></span>
+                  <span><div class="plus">+</div></span>
+                </div>
+                <div class="msg_wrap">
+                  <div class="msg_body">
+                      <div class="msg_a">this is from A</div>
+                      <div class="msg_b">this is from B</div>
+                      <div class="msg_insert"></div>
+                      <div class="msg_footer">
+                        <textarea class="msg_input" rows="6" columns="2"></textarea>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </span>
+      </div>
+  </div>
 </div>
 
 
-  <div style="height: 5px; bottom:8%;right:20px;position:fixed;width:87px;opacity: 1;background-color:rgba(0,0,0,0);">
-       <div id="div1">
-         <img id="phone" name="phone"   [src]="imageurl" (click)="startVideo(true)" style="width: 50px;height:50px;background-color:rgba(0,0,0,0);border-radius: 0px;color: white;font-weight: bolder;box-shadow: inset 5px 5px rgba(0,0,0,0);" >
-      </div>
-    </div>
+<div *ngIf="showPhoneIcon" style="height: 5px; bottom:8%;right:20px;position:fixed;width:87px;opacity: 1;background-color:rgba(0,0,0,0);">
+  <div id="div1">
+    <img id="phone" name="phone"   [src]="imageurl" (click)="startVideo(true)" style="width: 50px;height:50px;background-color:rgba(0,0,0,0);border-radius: 0px;color: white;font-weight: bolder;box-shadow: inset 5px 5px rgba(0,0,0,0);" >
+  </div>
+</div>

@@ -2,11 +2,12 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent }  from './app.component';
 import { routing }        from './app.routing';
 import { AlertComponent } from './directives/index';
-import { AlertService, AuthenticationService} from './services/index';
+import { AlertService, AuthenticationService, MediaService} from './services/index';
 
 import { HomeComponent } from './components/home/index';
 import { LoginComponent } from './components/login/index';
@@ -23,6 +24,7 @@ import { Routes, RouterModule } from '@angular/router';
         HttpModule,
         RouterModule,
         routing,
+        BrowserAnimationsModule,
 		MaterialModule.forRoot()
     ],
     declarations: [
@@ -33,7 +35,8 @@ import { Routes, RouterModule } from '@angular/router';
     ],
     providers: [
         AlertService,
-        AuthenticationService
+        AuthenticationService,
+        MediaService
     ],
     entryComponents: [ ],
     bootstrap: [AppComponent]

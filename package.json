@@ -17,6 +17,7 @@
     "Typescript"
   ],
   "dependencies": {
+    "@angular/animations": "^4.0.3",
     "@angular/common": "~4.0.1",
     "@angular/compiler": "~4.0.1",
     "@angular/core": "~4.0.1",
@@ -43,6 +44,7 @@
     "zone.js": "^0.8.5"
   },
   "devDependencies": {
+    "@types/jquery": "^2.0.41",
     "concurrently": "^3.0.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
